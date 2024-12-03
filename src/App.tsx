@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Wallet from "./pages/wallet";
+import { Analytics } from "@vercel/analytics/react"
 
 let hasAccount:boolean;
 
@@ -20,6 +21,7 @@ const App = () => {
       {!hasAccount ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Wallet />} />}
       {/* <Route path="/wallet" element={<Wallet />} /> */}
     </Routes>
+    <Analytics />
     </BrowserRouter>
   );
 };
